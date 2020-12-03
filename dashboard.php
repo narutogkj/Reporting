@@ -34,7 +34,7 @@
                         <div class="page-title-box">
                             <div class="btn-group pull-right">
                             </div>
-                            <h4 class="page-title">Dashboard</h4>
+                            <h4 class="page-title">Sales Trends</h4>
                         </div>
                     </div>
                 </div>
@@ -146,7 +146,7 @@
                 <div class="row">
                     <div class="col-xl-12"> <!-- chart section-->
                         <div class="card">
-                            <canvas id="myChart1" width="200px"></canvas>
+                            <canvas id="myChart1" width="100%"></canvas>
                         </div>
                     </div>
                     <div class="col-xl-4">
@@ -164,9 +164,9 @@
                     <div class="col-xl-4">
                         <div class="card">
                             <label for="vehicle1">From: </label>
-                            <input type="date" name="vehicle1" value="2013-01-08"> <br><br>
+                            <input type="date" name="vehicle1"  id="startDate"> <br><br>
                             <label for="vehicle1">To: </label>
-                            <input type="date" name="vehicle1" value="2013-01-08">
+                            <input type="date" name="vehicle1"  id="endDate">
                         </div>
                     </div>
 
@@ -251,5 +251,23 @@
         <script src="js/app.js"></script>
         <script src="fetch/logout.js"></script>
         <script src="fetch/dashboard.js"></script>
+        <script>
+        
+        //Sidebar Navigation
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+        }
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+        var toggler = document.getElementsByClassName("caret");
+        for (var i = 0; i < toggler.length; i++) {
+            toggler[i].addEventListener("click", function () {
+                this.parentElement.querySelector(".nested").classList.toggle("active");
+                this.classList.toggle("caret-down");
+            });
+        }
+
+        </script>
     </body>
 </html>
